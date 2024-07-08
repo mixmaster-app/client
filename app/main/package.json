@@ -1,5 +1,6 @@
 {
     "name": "mix-desktop",
     "description": "Mixmaster desktop app",
-    "main": "main.js"
+    "main": "main.js",
+    "private": true
 }

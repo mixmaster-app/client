@@ -5,6 +5,7 @@
     "scripts": {
         "ng": "ng",
         "start": "npm-run-all -p electron:serve ng:serve",
+        "ng:serve": "ng serve -c web -o",
         "build": "npm run electron:serve-tsc && ng build --base-href ./",
         "build:prod": "npm run build -- -c production",
         "electron": "electron",
@@ -35,12 +36,16 @@
         "@angular/compiler-cli": "^18.0.0",
         "@types/jasmine": "~5.1.0",
         "electron": "^31.1.0",
+        "electron-builder": "^24.13.3",
+        "electron-debug": "^4.0.0",
+        "electron-reloader": "^1.2.3",
         "jasmine-core": "~5.1.0",
         "karma": "~6.4.0",
         "karma-chrome-launcher": "~3.2.0",
         "karma-coverage": "~2.2.0",
         "karma-jasmine": "~5.1.0",
         "karma-jasmine-html-reporter": "~2.1.0",
+        "npm-run-all": "^4.1.5",
         "typescript": "~5.4.2"
     }
 }

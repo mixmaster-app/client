@@ -1,20 +1,23 @@
 {
     "extends": "../tsconfig.json",
     "compilerOptions": {
-        "outDir": "../out-tsc/app",
-        "baseUrl": "",
+        "esModuleInterop": true,
+        "outDir": "../out-tsc/spec",
         "types": [
+            "jest",
             "node"
         ]
     },
     "files": [
-        "main.ts",
-        "polyfills.ts"
+        "polyfills-test.ts"
     ],
     "include": [
+        "**/*.spec.ts",
         "**/*.d.ts"
     ],
     "exclude": [
-        "**/*.spec.ts"
+        "dist",
+        "release",
+        "node_modules"
     ]
 }

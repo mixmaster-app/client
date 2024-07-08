@@ -1,3 +1,5 @@
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+
 /**
  * Custom angular webpack configuration
  */

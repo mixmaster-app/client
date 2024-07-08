@@ -2,5 +2,5 @@
 
 ```shell
 
-npm i -g @angular/cli electron wait-on
+npm i -g @angular/cli electron wait-on npm-run-all
 ```

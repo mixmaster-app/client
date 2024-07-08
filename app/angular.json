@@ -15,9 +15,7 @@
                     "options": {
                         "outputPath": "dist",
                         "index": "src/index.html",
-                        "polyfills": [
-                            "zone.js"
-                        ],
+                        "polyfills": "src/polyfills.ts",
                         "main": "src/main.ts",
                         "tsConfig": "src/tsconfig.app.json",
                         "assets": [
@@ -27,7 +25,7 @@
                             }
                         ],
                         "styles": [
-                            "src/styles.css"
+                            "src/styles.scss"
                         ],
                         "scripts": []
                     },
@@ -142,7 +140,7 @@
                             }
                         ],
                         "styles": [
-                            "src/styles.css"
+                            "src/styles.scss"
                         ],
                         "scripts": []
                     }

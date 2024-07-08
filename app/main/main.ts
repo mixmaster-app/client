@@ -1,13 +1,13 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import * as fs from 'fs';
+import debug from 'electron-debug';
 
 let win: BrowserWindow | null = null;
 const args = process.argv.slice(1),
   serve = args.some((val) => val === '--serve');
 
 function createWindow(): BrowserWindow {
-  // const size = screen.getPrimaryDisplay().workAreaSize;
 
   // Create the browser window.
   win = new BrowserWindow({
@@ -23,10 +23,7 @@ function createWindow(): BrowserWindow {
   });
 
   if (serve) {
-    const debug = require('electron-debug');
     debug();
-
-    require('electron-reloader')(module);
     win.loadURL('http://localhost:4200');
   } else {
     // Path when running electron executable

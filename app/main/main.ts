@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import * as fs from 'fs';
-import debug from 'electron-debug';
+// import debug from 'electron-debug';
 
 let win: BrowserWindow | null = null;
 const args = process.argv.slice(1),
@@ -23,7 +23,7 @@ function createWindow(): BrowserWindow {
   });
 
   if (serve) {
-    debug();
+    // debug();
     win.loadURL('http://localhost:4200');
   } else {
     // Path when running electron executable

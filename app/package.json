@@ -1,7 +1,13 @@
 {
-    "name": "mix-desktop",
+    "name": "mixmaster-client",
     "version": "0.0.0",
     "main": "main/main.js",
+    "description": "Mixmaster unofficial client application",
+    "author": {
+        "name": "Kiiow",
+        "url": "https://github.com/kiiow"
+    },
+    "private": true,
     "scripts": {
         "ng": "ng",
         "start": "npm-run-all -p electron:serve ng:serve",
@@ -13,10 +19,10 @@
         "electron:serve": "wait-on tcp:4200 && npm run electron:serve-tsc && electron . --serve",
         "electron:local": "npm run build:prod && electron .",
         "electron:build": "npm run build:prod && electron-builder build --publish=never",
+        "electron:publish": "npm run build:prod && electron-builder build --publish=always",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },
-    "private": true,
     "dependencies": {
         "@angular/animations": "^18.0.0",
         "@angular/common": "^18.0.0",

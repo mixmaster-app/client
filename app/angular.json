@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "mix-desktop": {
+        "mixmaster-client": {
             "projectType": "application",
             "schematics": {},
             "root": "",
@@ -110,17 +110,17 @@
                 "serve": {
                     "builder": "@angular-builders/custom-webpack:dev-server",
                     "options": {
-                        "buildTarget": "mix-desktop:build"
+                        "buildTarget": "mixmaster-client:build"
                     },
                     "configurations": {
                         "production": {
-                            "buildTarget": "mix-desktop:build:production"
+                            "buildTarget": "mixmaster-client:build:production"
                         },
                         "dev": {
-                            "buildTarget": "mix-desktop:build:development"
+                            "buildTarget": "mixmaster-client:build:development"
                         },
                         "web": {
-                            "buildTarget": "mix-desktop:build:web"
+                            "buildTarget": "mixmaster-client:build:web"
                         }
                     }
                 },

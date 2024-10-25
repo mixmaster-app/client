@@ -25,3 +25,21 @@ npm install
 ### Launch the project locally
 
 To launch the project manually you need to execute the `npm run start` command. It will launch the application both in the browser and encapsulated in an electron application
+
+### Publish the project
+
+The publication of the project is configured in `electron-builder.json` file under `publish`
+
+You firstly need to manually configure the Github token that will be used to publish the release
+
+```
+set GH_TOKEN=ghp_***
+```
+
+Once done you can use the following command to publish a new release
+
+```
+npm run electron:publish
+```
+
+Electron will create a new release with the version number provided in the package.json file, by default it will create a new draft release.

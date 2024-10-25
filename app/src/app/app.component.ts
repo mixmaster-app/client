@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    title = 'mix-desktop';
+    title = 'mixmaster-client';
     sidebarVisible: boolean = false;
 }

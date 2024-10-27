@@ -1,0 +1,45 @@
+{
+    "asar": true,
+    "appId": "fr.kiiow.mixmaster.client",
+    "productName": "mixmaster-client",
+    "electronLanguages": "fr_FR",
+    "directories": {
+        "output": "./dist"
+    },
+    "files": [
+        "**/*",
+        "!**/*.ts",
+        "!*.map",
+        "!package.json",
+        "!package-lock.json",
+        {
+            "from": "./build/assets",
+            "filter": [
+                "**/*"
+            ]
+        }
+    ],
+    "win": {
+        "icon": "./build/assets/icon.ico",
+        "target": [
+            "nsis"
+        ]
+    },
+    "nsis": {
+        "allowElevation": false,
+        "allowToChangeInstallationDirectory": true,
+        "installerIcon": "./build/assets/installer/installer.ico",
+        "installerHeaderIcon": "./build/assets/icon.ico",
+        "installerSidebar": "./build/assets/installer/sidebar.bmp",
+        "oneClick": false,
+        "perMachine": false
+    },
+    "publish": [
+        {
+            "provider": "github",
+            "owner": "kiiow",
+            "repo": "angular-init-app",
+            "releaseType": "draft"
+        }
+    ]
+}

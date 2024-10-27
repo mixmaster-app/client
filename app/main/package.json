@@ -1,0 +1,6 @@
+{
+    "name": "mixmaster-client",
+    "description": "Mixmaster unofficial client",
+    "main": "main.js",
+    "private": true
+}

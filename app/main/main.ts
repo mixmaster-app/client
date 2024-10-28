@@ -7,6 +7,8 @@ let win: BrowserWindow | null = null;
 const args = process.argv.slice(1),
   serve = args.some((val) => val === '--serve');
 
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
+
 function createWindow(): BrowserWindow {
 
   // Create the browser window.

@@ -63,17 +63,17 @@
                                 }
                             ]
                         },
-                        "dev": {
+                        "development": {
                             "customWebpackConfig": {
                                 "path": "./angular.webpack.js",
                                 "replaceDuplicatePlugins": true
                             },
                             "optimization": false,
                             "outputHashing": "none",
-                            "extractLicenses": false,
-                            "namedChunks": false,
                             "sourceMap": true,
-                            "aot": true,
+                            "namedChunks": false,
+                            "aot": false,
+                            "extractLicenses": true,
                             "vendorChunk": false,
                             "buildOptimizer": false,
                             "fileReplacements": [

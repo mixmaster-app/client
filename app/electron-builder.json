@@ -37,8 +37,8 @@
     "publish": [
         {
             "provider": "github",
-            "owner": "kiiow",
-            "repo": "angular-init-app",
+            "owner": "mixmaster-app",
+            "repo": "client",
             "releaseType": "draft"
         }
     ]

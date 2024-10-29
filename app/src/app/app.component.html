@@ -1,28 +1,6 @@
-<div class="app-wrapper" style="background:red; width: 100%; height: 100%; padding: 0; margin: 0;">
-    <div class="window-section" >
-        <span>reduce</span>
-        <span>maximize/minimize</span>
-        <span>close</span>
-    </div>
-    <div class="sidebar">
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a routerLink="/home">Home</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="/hench/list">Hench list</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="/hench/tree">Tree view</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="/hench/calculator">Claculator</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="/settings">Settings</a>
-            </li>
-        </ul>
-    </div>
+<div class="app-wrapper">
+    <window-navbar class="window-section" />
+    <window-sidebar class="sidebar" />
     <div class="main">
         <router-outlet></router-outlet>
     </div>

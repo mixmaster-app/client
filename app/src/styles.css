@@ -3,8 +3,45 @@ html {
 }
 
 body {
-    /* NOTE: Why is the -16px required ?*/
-    margin: -16px 0 0 0;
+    margin: 0;
     height: 100%;
-    background: blue;
 }
+
+:root {
+    --window-bar-height: 32px;
+    --sidebar-max-width: 200px;
+}
+
+.app-wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    /* Grid display*/
+    display: grid;
+    gap: .3rem;
+    grid-template-areas:
+        "window-section"
+        "sidebar main";
+    grid-template-rows: auto calc(100vh - var(--window-bar-height));
+    grid-template-columns: auto calc(100vw - var(--sidebar-max-width));
+}
+
+/* Grid */
+.window-section {
+    grid-area: "window-section";
+    grid-column: span 2;
+    background: blue;
+    max-height: var(--window-bar-height);
+}
+.sidebar {
+    grid-area: "sidebar";
+    background: green;
+    max-width: var(--sidebar-max-width);
+}
+.main {
+    grid-area: "main";
+    background: orange;
+}
+/* --- */

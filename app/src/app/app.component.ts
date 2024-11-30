@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { APP_CONFIG } from './../environments/environment';
+import { Title } from '@angular/platform-browser'
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
+    templateUrl: 'app.component.html',
+    styleUrl: 'app.component.css',
 })
 export class AppComponent {
-    constructor() {
+    
+    protected title = 'Mixmaster Client';
+
+    constructor(private titleService:Title) {
         console.log(APP_CONFIG);
+        this.titleService.setTitle(this.title);
     }
-    title = 'mixmaster-client';
-    sidebarVisible: boolean = false;
 }

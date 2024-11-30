@@ -12,8 +12,14 @@ body {
 }
 
 :root {
-    --window-bar-maxheight: 32px;
+    --window-bar-height: 32px;
     --sidebar-max-width: 200px;
+    --app-grid-gap: .3rem
+}
+
+.main {
+    height: 100%;
+    margin: 0;
 }
 
 .app-wrapper {
@@ -25,38 +31,32 @@ body {
 
     /* Grid display*/
     display: grid;
-    gap: .3rem;
+    gap: var(--app-grid-gap);
     grid-template-areas:
-        "window-section"
+        "window-section window-section"
         "sidebar main";
-    grid-template-rows: auto calc(100vh - var(--window-bar-maxheight));
+    grid-template-rows: auto calc(100vh - var(--window-bar-height));
     grid-template-columns: auto calc(100vw - var(--sidebar-max-width));
 }
 
 /* Grid */
 .window-section {
-    grid-area: "window-section";
+    grid-area: window-section;
     grid-column: span 2;
     background: blue;
     height: var(--window-bar-height);
-    max-height: var(--window-bar-maxheight);
+    max-height: var(--window-bar-height);
 }
+
 .sidebar {
-    grid-area: "sidebar";
+    height: calc(100% - var(--app-grid-gap));
+    grid-area: sidebar;
     background: green;
     max-width: var(--sidebar-max-width);
 }
-.main {
-    grid-area: "main";
-    background: orange;
-}
-/* --- */
 
-.window-menu {
-    list-style: none;
-    li {
-        display: inline-block;
-        padding: 0 .5rem;
-        text-align: center;
-    }
+.main {
+    height: calc(100% - var(--app-grid-gap));
+    grid-area: main;
+    background: orange;
 }

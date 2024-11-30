@@ -1,12 +1,10 @@
 class Server {
     private ip: string;
     private port: number;
-    private launcherPath: string;
 
-    constructor(ip: string, port: number, launcherPath: string) {
+    constructor(ip: string, port: number) {
         this.ip = ip;
         this.port = port;
-        this.launcherPath = launcherPath;
     }
 
     public getIp() {
@@ -17,9 +15,6 @@ class Server {
         return this.port;
     }
 
-    public getLauncherPath() {
-        return this.launcherPath;
-    }
 }
 
 export default Server

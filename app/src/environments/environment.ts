@@ -1,7 +1,6 @@
 export const APP_CONFIG = {
     production: false,
     environment: 'LOCAL',
-    server_default_ip: '',
     default_server: {
         ip: '164.132.203.180',
         port: 23500,

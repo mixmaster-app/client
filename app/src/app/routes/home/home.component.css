@@ -64,6 +64,7 @@ main {
 
 .grid-item {
     padding: 1rem;
+    z-index: 9999;
 }
 
 .frosted {
@@ -72,4 +73,60 @@ main {
     background-color: rgba(242, 231, 255, 0.5);
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
     border: 1.5px solid rgb(255, 255, 255) ease;
+}
+
+.particle-container {
+    overflow: hidden;
+    position: absolute;
+    top: var(--window-bar-height);
+    left: var(--sidebar-max-width);
+    bottom:0;
+    width: calc(100% - var(--sidebar-max-width));
+    --timescale: 0.6s;
+}
+
+.pt {
+    z-index: 1;
+    position: absolute;
+    left: calc( var(--x) * 1%);
+    top: calc( var(--y) * 1% );
+    height: 50px; 
+    animation:
+        moveUpDown calc( var(--timescale) * var(--yt) ) infinite cubic-bezier(.45,.05,.55,.95) alternate;
+    animation-delay: calc( -1s * var(--d, 0) );
+}
+.pt b {
+    display: block;
+    position: inherit;
+
+    background-image: url("assets/images/star.webp");
+    background-size: contain;
+    /* background: radial-gradient(circle, #ffae00 0%, #ff4500 80%);
+    box-shadow:
+      0 0 6px rgba(255, 100, 0, 0.6),
+      0 0 12px rgba(255, 70, 0, 0.4),
+      0 0 18px rgba(255, 50, 0, 0.2);
+    border-radius: 50%; */
+    
+    width: calc( 0.05rem * var(--w) );
+    height: calc( 0.05rem * var(--w) );
+    opacity:var(--o, 1);
+    animation:
+        moveRightLeft calc( var(--timescale) * var(--xt) ) infinite cubic-bezier(.45,.05,.55,.95) alternate,
+        flicker calc( 2s * var(--xd) ) infinite alternate  cubic-bezier(.45,.05,.55,.95)
+    ;
+    animation-delay: calc( -1s * var(--d, 0) ) , calc( -0.2s * var(--d, 0) );
+}
+
+@keyframes moveUpDown {
+    0% {}
+    100% { transform:translateY( calc(50% * var(--yd, 3)) ); } 
+}
+@keyframes moveRightLeft {
+    0% { transform: translateX( calc(-50% * var(--xd, 3)) );}
+    100% { transform: translateX( calc(50% * var(--xd, 3)) ); }
+}
+@keyframes flicker{
+    0% { opacity:calc( var(--o, 1) - 0.1); }
+    100% { opacity:calc( var(--o, 1) + 0.1); }
 }

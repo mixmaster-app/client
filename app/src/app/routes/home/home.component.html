@@ -12,4 +12,8 @@
     <div class="alert grid-item frosted">
         
     </div>
+    <div class="particle-container">
+        <!-- Adapted from https://csscrafter.com/css-particle-effects/ -->
+        <span [style]="style" *ngFor="let style of particles" class="pt"><b></b></span>
+    </div>
 </main>

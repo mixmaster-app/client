@@ -2,11 +2,12 @@ main {
     height: 100%;
     margin: 0;
     padding: 2rem;
-    background-image: url("public/mixmaster-wallpaper.jpg");
+    background-image: url("assets/images/mixmaster-wallpaper.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
     display: grid;
+    border-radius: var(--border-main-radius) var(--border-main-radius) 0 0;
 }
 
 @media screen and (min-width: 1000px) {
@@ -29,7 +30,7 @@ main {
     
     .alert {
         grid-area: 4 / 3 / 5 / 6;
-        margin: 2rem;
+        margin: 0 2rem 2rem 2rem;
     }
 }
 
@@ -57,6 +58,10 @@ main {
     }
 }
 
+.events {
+    overflow-x: auto;
+}
+
 .grid-item {
     padding: 1rem;
 }
@@ -64,7 +69,7 @@ main {
 .frosted {
     border-radius: 0.8rem;
     backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(242, 231, 255, 0.5);
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
     border: 1.5px solid rgb(255, 255, 255) ease;
 }

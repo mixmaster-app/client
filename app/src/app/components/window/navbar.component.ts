@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'window-navbar',
@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
     templateUrl: 'navbar.component.html',
     styleUrl: 'navbar.component.css'
 })
-export class WindowNavbarComponent {}
+export class WindowNavbarComponent {
+    @Input() title: string = "";
+    @Input() version: string = "";
+
+    getNavbarTitle() {
+        return `${this.title}${this.version != '' ? ` ${this.version}` : ''}`;
+    }
+}

@@ -1,41 +1,7 @@
 @import "primeng/resources/themes/lara-light-purple/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
-
-:root {
-    /* Main background colors */
-    --bg-primary: #121212;
-    --bg-secondary: #1e1e1e;
-    --bg-tertiary: #2d2d2d;
-
-    /* Text colors */
-    --text-primary: #ffffff;
-    --text-secondary: #b3b3b3;
-    --text-tertiary: #8a8a8a;
-
-    /* Accent colors - Light Purple */
-    --accent-primary: #bb86fc;
-    --accent-secondary: #9965db;
-    --accent-tertiary: #d4b6ff;
-
-    /* Status colors */
-    --error: #cf6679;
-    --warning: #ffb74d;
-    --success: #4caf50;
-    --info: #64b5f6;
-
-    /* Border and divider colors */
-    --border: #333333;
-    --border-light: #444444;
-
-    /* Shadow colors for elevation */
-    --shadow: rgba(0, 0, 0, 0.3);
-
-    /* Additional UI elements */
-    --disabled: #616161;
-    --disabled-text: #8a8a8a;
-    --overlay: rgba(0, 0, 0, 0.5);
-}
+@import "theme.css";
 
 html {
     height: 100%;
@@ -49,12 +15,14 @@ body {
 :root {
     --window-bar-height: 32px;
     --sidebar-max-width: 200px;
-    --app-grid-gap: .08rem
+    --app-grid-gap: .1rem
 }
 
 .main {
     height: 100%;
     margin: 0;
+    border-radius: var(--border-main-radius) var(--border-main-radius) 0 0;
+    background-color: var(--bg-secondary);
 }
 
 .app-wrapper {
@@ -62,7 +30,7 @@ body {
     width: 100%;
 
     display: grid;
-    background-color: var(--accent-primary);
+    background-color: var(--bg-secondary);
     
     column-gap: var(--app-grid-gap);
     row-gap: var(--app-grid-gap);
@@ -81,7 +49,7 @@ body {
     grid-area: 2 / 1 / 3 / 1;
     height: 100%;
     max-width: var(--sidebar-max-width);
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     color: var(--text-primary);
 }
 
@@ -90,6 +58,7 @@ body {
     height: 100%;
 }
 
+/* Inputs */
 input {
     display: block;
     width: 100%;
@@ -105,4 +74,47 @@ input:focus {
     outline: none;
     border-color: #4a90e2;
     box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Buttons */
+button {
+    background-color: var(--info);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--info-hover);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    border-radius: 8px;
+    width: 10px;  /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);  /* color of the tracking area */
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);  /* color of the scroll thumb */
+    border-radius: 8px;
+    border: 2px solid var(--bg-secondary);  /* creates padding around scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);  /* color of the scroll thumb when hovering */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;  /* "auto" or "thin" */
+    scrollbar-color: var(--accent-primary) var(--bg-secondary);  /* thumb and track color */
 }

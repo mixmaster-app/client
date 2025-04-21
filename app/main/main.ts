@@ -19,7 +19,7 @@ function createWindow(): BrowserWindow {
     frame: false,
     webPreferences: {
       nodeIntegration: true,
-      preload: path.join(__dirname, './preload.ts'),
+      preload: path.join(__dirname, './preload.js'),
       allowRunningInsecureContent: serve,
       devTools: true,
       contextIsolation: true,

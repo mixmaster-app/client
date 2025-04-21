@@ -1,5 +1,4 @@
-// import { exec } from "child_process";
-
+const { exec } = require("node:child_process");
 const { ipcRenderer, contextBridge } = require("electron")
 
 contextBridge.exposeInMainWorld(
@@ -18,10 +17,14 @@ contextBridge.exposeInMainWorld(
     }
 )
 
-// contextBridge.exposeInMainWorld(
-//     "launcher", {
-//         connect: (username: string, password: string) => {
-//             exec("echo 'hello world!'");
-//         }
-//     }
-// )
+contextBridge.exposeInMainWorld(
+    "host", {
+        execute: (command) => {
+            exec(command, (err, _, stderr) => {
+                if(err) {
+                    console.error(stderr);
+                }
+            });
+        }
+    }
+)

@@ -7,12 +7,9 @@ import { Component, Input } from '@angular/core';
     styleUrl: 'navbar.component.css'
 })
 export class WindowNavbarComponent {
+
     @Input() title: string = "";
     @Input() version: string = "";
-
-    getNavbarTitle() {
-        return `${this.title}${this.version != '' ? ` ${this.version}` : ''}`;
-    }
 
     close() {
         if(!window.actions) return;

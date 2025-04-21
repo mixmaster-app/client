@@ -1,5 +1,5 @@
-import Server from "../../entity/launcher/server";
-import { APP_CONFIG } from "../../environments/environment";
+import Server from "@entity/launcher/server";
+import { APP_CONFIG } from "@env/environment";
 
 function createDefaultServer(): Server {
     let serverConfig = APP_CONFIG.default_server;

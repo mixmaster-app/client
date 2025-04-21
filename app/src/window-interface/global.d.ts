@@ -10,4 +10,8 @@ interface Window {
         minimize: () => void;
         maximize: () => void;
     };
+
+    host: {
+        execute: ( command: string ) => void;
+    };
 }

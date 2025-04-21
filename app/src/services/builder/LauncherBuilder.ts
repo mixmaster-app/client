@@ -1,4 +1,4 @@
-import Launcher from '../../entity/launcher/launcher';
+import Launcher from '@entity/launcher/launcher';
 
 function createDefaultLauncher(): Launcher {
     return new Launcher(

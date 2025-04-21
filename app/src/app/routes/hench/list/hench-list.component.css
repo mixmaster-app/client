@@ -1,0 +1,9 @@
+main {
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: var(--border-main-radius);
+    border-top-left-radius: var(--border-main-radius);
+    background-color: var(--bg-tertiary);
+    padding: 1rem;
+    color: var(--text-primary);
+}

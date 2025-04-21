@@ -6,6 +6,7 @@ import { AppRoutesModule } from '@app/app-routes.module';
     selector: 'window-sidebar',
     standalone: true,
     templateUrl: 'sidebar.component.html',
+    styleUrl: 'sidebar.component.css',
     imports: [AppRoutesModule],
 })
 export class WindowSidebarComponent {}

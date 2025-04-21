@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    templateUrl: './hench-list.component.html',
+    templateUrl: 'hench-list.component.html',
+    styleUrl: 'hench-list.component.css'
 })
 export class HenchListComponent {}

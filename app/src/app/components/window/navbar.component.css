@@ -6,6 +6,9 @@ main {
     grid-template-rows: repeat(1, 1fr);
 }
 
+.drag { -webkit-app-region: drag; }
+.no-drag { -webkit-app-region: no-drag; }
+
 .logo {
     --logo-size: 16px;
     width: var(--logo-size);

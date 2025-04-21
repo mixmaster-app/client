@@ -8,7 +8,6 @@ import { AppRoutesModule } from './app-routes.module';
 import { WindowNavbarComponent } from './components/window/navbar.component';
 import { WindowSidebarComponent } from './components/window/sidebar.component';
 import { HomeModule } from './routes/home/home.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [AppComponent],

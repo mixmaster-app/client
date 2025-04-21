@@ -1,32 +1,34 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain as windowEvents } from 'electron';
 import * as path from 'path';
 import * as fs from 'fs';
-// import debug from 'electron-debug';
 
-let win: BrowserWindow | null = null;
-const args = process.argv.slice(1),
-  serve = args.some((val) => val === '--serve');
+let mainWindow: BrowserWindow | null = null;
+const args = process.argv.slice(1);
+const serve = args.some((val) => val === '--serve');
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
 function createWindow(): BrowserWindow {
 
   // Create the browser window.
-  win = new BrowserWindow({
-    x: 0,
-    y: 0,
+  mainWindow = new BrowserWindow({
+    minWidth: 940,
+    minHeight: 560,
     width: 1280,
     height: 720,
+    frame: false,
     webPreferences: {
       nodeIntegration: true,
+      preload: path.join(__dirname, './preload.ts'),
       allowRunningInsecureContent: serve,
-      contextIsolation: false,
+      devTools: true,
+      contextIsolation: true,
     },
   });
 
   if (serve) {
     // debug();
-    win.loadURL('http://localhost:4200');
+    mainWindow.loadURL('http://localhost:4200');
   } else {
     // Path when running electron executable
     let pathIndex = './index.html';
@@ -37,18 +39,18 @@ function createWindow(): BrowserWindow {
     }
 
     const url = new URL(path.join('file:', __dirname, pathIndex));
-    win.loadURL(url.href);
+    mainWindow.loadURL(url.href);
   }
 
   // Emitted when the window is closed.
-  win.on('closed', () => {
+  mainWindow.on('closed', () => {
     // Dereference the window object, usually you would store window
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    win = null;
+    mainWindow = null;
   });
 
-  return win;
+  return mainWindow;
 }
 
 try {
@@ -70,7 +72,7 @@ try {
   app.on('activate', () => {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (win === null) {
+    if (mainWindow === null) {
       createWindow();
     }
   });
@@ -78,3 +80,23 @@ try {
   // Catch Error
   // throw e;
 }
+
+app.whenReady().then( () => {
+  windowEvents.on("close-app", () => {
+    app.quit();
+  });
+  
+  windowEvents.on("minimize-app", () => {
+    if(!mainWindow) return;
+    mainWindow.minimize();
+  });
+  
+  windowEvents.on("maximize-app", () => {
+    if(!mainWindow) return;
+    if (mainWindow.isMaximized()) {
+      mainWindow.unmaximize();
+    } else {
+      mainWindow.maximize();
+    }
+  });
+})

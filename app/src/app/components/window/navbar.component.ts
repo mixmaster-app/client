@@ -13,4 +13,20 @@ export class WindowNavbarComponent {
     getNavbarTitle() {
         return `${this.title}${this.version != '' ? ` ${this.version}` : ''}`;
     }
+
+    close() {
+        if(!window.actions) return;
+        window.actions.close();
+    }
+
+    minimize() {
+        if(!window.actions) return;
+        window.actions.minimize();
+    }
+
+    maximize() {
+        if(!window.actions) return;
+        window.actions.maximize();
+    }
+
 }

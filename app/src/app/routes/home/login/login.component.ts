@@ -6,19 +6,23 @@ import Server from "@entity/launcher/server";
 import Launcher from "@entity/launcher/launcher";
 import { createDefaultLauncher } from "@services/builder/LauncherBuilder";
 import { connect } from "@services/authenticate";
+import { ButtonModule } from "primeng/button";
+import { CommonModule } from "@angular/common";
 
 @Component({
     selector: 'login',
     standalone: true,
     imports: [
-        FormsModule,
+        CommonModule,
         ReactiveFormsModule,
+        ButtonModule,
+        FormsModule
     ],
     templateUrl: 'login.component.html',
     styleUrl: 'login.component.css',
 })
 export class LoginComponent {
-
+    value1: string | undefined;
     username: FormControl = new FormControl('');
     password: FormControl = new FormControl('');
 

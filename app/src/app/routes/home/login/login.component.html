@@ -1,7 +1,12 @@
 <main>
     <div class="form">
-        <input class="form-control" type="text" [formControl]="username" placeholder="Login" />
-        <input class="form-control" type="password" [formControl]="password" placeholder="Password" />
+        <p-button label="Check" />
+        <!-- <p-floatlabel variant="on">
+            <input pInputText id="login" [(ngModel)]="value1" autocomplete="off" />
+            <label for="login">Login</label>
+        </p-floatlabel> -->
+        <!-- <input class="form-control" type="text" [formControl]="username" placeholder="Login" />
+        <input class="form-control" type="password" [formControl]="password" placeholder="Password" /> -->
         
         <button type="button" class="btn-login" (click)="login()">CONNECT</button>
     </div>

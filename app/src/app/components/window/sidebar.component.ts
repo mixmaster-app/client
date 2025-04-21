@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AppRoutesModule } from '../../app-routes.module';
+import { AppRoutesModule } from '@app/app-routes.module';
 
 @Component({
     selector: 'window-sidebar',

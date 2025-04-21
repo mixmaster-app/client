@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { random } from "../../../services/random";
+import { random } from "@services/random";
 
 @Component({
     standalone: false,

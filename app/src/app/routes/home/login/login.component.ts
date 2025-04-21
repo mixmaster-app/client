@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import UserAccount from "../../../../entity/launcher/user-account";
-import { createDefaultServer } from "../../../../services/builder/ServerBuilder";
-import Server from "../../../../entity/launcher/server";
-import Launcher from "../../../../entity/launcher/launcher";
-import { createDefaultLauncher } from "../../../../services/builder/LauncherBuilder";
-import { connect } from "../../../../services/authenticate";
+import UserAccount from "@entity/launcher/user-account";
+import { createDefaultServer } from "@services/builder/ServerBuilder";
+import Server from "@entity/launcher/server";
+import Launcher from "@entity/launcher/launcher";
+import { createDefaultLauncher } from "@services/builder/LauncherBuilder";
+import { connect } from "@services/authenticate";
 
 @Component({
     selector: 'login',

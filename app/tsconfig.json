@@ -21,7 +21,14 @@
             "es2018",
             "dom"
         ],
-        "useDefineForClassFields": false
+        "useDefineForClassFields": false,
+        "baseUrl": "src",
+        "paths": {
+            "@entity/*": [ "entity/*" ],
+            "@services/*": [ "services/*" ],
+            "@app/*": [ "app/*" ],
+            "@env/*": [ "environments/*" ],
+        }
     },
     "exclude": [
         "node_modules"

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { APP_CONFIG } from './../environments/environment';
+import { APP_CONFIG } from '@env/environment';
 import { Title } from '@angular/platform-browser'
 
 @Component({

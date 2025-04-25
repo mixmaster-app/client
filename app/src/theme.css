@@ -1,44 +1,10 @@
-:root[theme="light"] {
-    /* Main background colors - light with purple tints */
-    --bg-primary: #f8f7fc;;
-    --bg-secondary: #eeedf4;
-    --bg-tertiary: #e3e1ec;
-
-    /* Text colors */
-    --text-primary: #1a1a24;
-    --text-secondary: #4a4a55;
-    --text-tertiary: #6c6b7b;
-
-    /* Accent colors - Light Purple (same as dark theme) */
-    --accent-primary: #9965db;
-    --accent-hover: #8753c7;
-    --accent-secondary: #7d4ec0;
-    --accent-tertiary: #bb86fc;
-
-    /* Status colors */
-    --error: #de3730;
-    --error-hover: #c12e28;
-    --warning: #f5a623;
-    --warning-hover: #e09716;
-    --success: #28a745;
-    --success-hover: #21913a;
-    --info: #0d6efd;
-    --info-hover: #0b5ed7;
-
-    /* Border and divider colors */
-    --border: #d5d2e5;
-    --border-light: #e8e6f2;
-
-    /* Shadow colors for elevation */
-    --shadow: rgba(145, 127, 179, 0.15);
-
-    /* Additional UI elements */
-    --disabled: #d2d0dd;
-    --disabled-text: #9f9daf;
-    --overlay: rgba(209, 203, 232, 0.4);
-}
+@import 'primeicons/primeicons.css';
+@import "@fontsource/sora";
+@import "@fontsource/sora/500.css";
 
 :root {
+    --font-source: "Sora";
+
     /* Main background colors */
     --bg-primary: #1a1a24;
     --bg-secondary: #242433;
@@ -77,4 +43,44 @@
     --disabled: #616171;
     --disabled-text: #8a8a9a;
     --overlay: rgba(18, 18, 30, 0.5);
+}
+
+:root[theme="light"] {
+    /* Main background colors - light with purple tints */
+    --bg-primary: #f8f7fc;;
+    --bg-secondary: #eeedf4;
+    --bg-tertiary: #e3e1ec;
+
+    /* Text colors */
+    --text-primary: #1a1a24;
+    --text-secondary: #4a4a55;
+    --text-tertiary: #6c6b7b;
+
+    /* Accent colors - Light Purple (same as dark theme) */
+    --accent-primary: #9965db;
+    --accent-hover: #8753c7;
+    --accent-secondary: #7d4ec0;
+    --accent-tertiary: #bb86fc;
+
+    /* Status colors */
+    --error: #de3730;
+    --error-hover: #c12e28;
+    --warning: #f5a623;
+    --warning-hover: #e09716;
+    --success: #28a745;
+    --success-hover: #21913a;
+    --info: #0d6efd;
+    --info-hover: #0b5ed7;
+
+    /* Border and divider colors */
+    --border: #d5d2e5;
+    --border-light: #e8e6f2;
+
+    /* Shadow colors for elevation */
+    --shadow: rgba(145, 127, 179, 0.15);
+
+    /* Additional UI elements */
+    --disabled: #d2d0dd;
+    --disabled-text: #9f9daf;
+    --overlay: rgba(209, 203, 232, 0.4);
 }

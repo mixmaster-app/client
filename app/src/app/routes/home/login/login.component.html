@@ -1,12 +1,27 @@
 <main>
     <div class="form">
-        <p-floatlabel variant="on">
-            <input pInputText id="login" [(ngModel)]="value1" autocomplete="off" />
-            <label for="login">Login</label>
-        </p-floatlabel>
-        <!-- <input class="form-control" type="text" [formControl]="username" placeholder="Login" />
-        <input class="form-control" type="password" [formControl]="password" placeholder="Password" /> -->
+        <img src="icon.png" height="104"/>
+
+        <p-inputgroup class="mb-1">
+            <p-inputgroup-addon>
+                <i class="pi pi-user"></i>
+            </p-inputgroup-addon>
+            <p-floatlabel variant="on">
+                <input pInputText id="username" [(ngModel)]="username" autocomplete="off" />
+                <label for="username">Login</label>
+            </p-floatlabel>
+        </p-inputgroup>
+
+        <p-inputgroup class="mb-1">
+            <p-inputgroup-addon>
+                <i class="pi pi-lock"></i>
+            </p-inputgroup-addon>
+            <p-floatlabel variant="on">
+                <p-password [inputStyle]="{'width': '100%', 'height': '100%', 'border-top-left-radius': '0', 'border-bottom-left-radius': '0', 'z-index': '0'}" [style]="{'width': '100%'}" id="password" [(ngModel)]="password" [feedback]="false" [toggleMask]="true" />
+                <label for="password">Password</label>
+            </p-floatlabel>
+        </p-inputgroup>
         
-        <button type="button" class="btn-login" (click)="login()">CONNECT</button>
+        <p-button label="CONNNECT" (click)="login()" severity="info" />
     </div>
 </main>

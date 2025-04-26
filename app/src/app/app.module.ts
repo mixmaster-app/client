@@ -11,6 +11,8 @@ import { AppRoutesModule } from './app-routes.module';
 import { WindowNavbarComponent } from './components/window/navbar.component';
 import { WindowSidebarComponent } from './components/window/sidebar.component';
 import { HomeModule } from './routes/home/home.module';
+import { StoreModule } from '@ngrx/store';
+import { gameReducer } from 'reducer/game/game.reducder';
 
 @NgModule({
     declarations: [AppComponent],
@@ -23,6 +25,7 @@ import { HomeModule } from './routes/home/home.module';
         AppRoutesModule,
         WindowNavbarComponent,
         WindowSidebarComponent,
+        StoreModule.forRoot({ Game: gameReducer }),
     ],
     providers: [
         provideAnimationsAsync(),

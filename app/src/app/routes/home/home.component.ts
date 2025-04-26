@@ -1,5 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
+import { Store } from "@ngrx/store";
 import { random } from "@services/random";
+import { GameActions } from "reducer/game/game.action";
+import { getGameExePath } from "reducer/game/game.selector";
 
 @Component({
     standalone: false,
@@ -7,10 +10,18 @@ import { random } from "@services/random";
     styleUrl: 'home.component.css',
 })
 export class HomeComponent {
+
     particles: any[] = [];
+    exeFullPath$ = this.store.select(getGameExePath);
+
+    constructor(private store: Store) { }
 
     ngOnInit() {
         this.particles = this.getLoopArray(150);
+    }
+
+    public setExe() {
+        this.store.dispatch(GameActions.setPath({ path: "test"}));
     }
 
     private getLoopArray(count: number): any[] {

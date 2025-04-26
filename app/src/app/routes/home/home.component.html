@@ -10,7 +10,8 @@
         <div>5</div>
     </div>
     <div class="alert grid-item frosted">
-        
+        <span>Exe path is: '{{ (exeFullPath$ | async)! }}'</span>
+        <p-button label="SetExe" (click)="setExe()" severity="info" />
     </div>
     <div class="particle-container">
         <!-- Adapted from https://csscrafter.com/css-particle-effects/ -->

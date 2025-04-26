@@ -12,7 +12,7 @@ import { WindowNavbarComponent } from './components/window/navbar.component';
 import { WindowSidebarComponent } from './components/window/sidebar.component';
 import { HomeModule } from './routes/home/home.module';
 import { StoreModule } from '@ngrx/store';
-import { gameReducer } from 'reducer/game/game.reducder';
+import { gameReducer } from 'reducer/game/game.reducer';
 
 @NgModule({
     declarations: [AppComponent],
@@ -25,7 +25,10 @@ import { gameReducer } from 'reducer/game/game.reducder';
         AppRoutesModule,
         WindowNavbarComponent,
         WindowSidebarComponent,
-        StoreModule.forRoot({ Game: gameReducer }),
+        // Set reducers to be used by other components
+        StoreModule.forRoot({
+            Game: gameReducer
+        }),
     ],
     providers: [
         provideAnimationsAsync(),

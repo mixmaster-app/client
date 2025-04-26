@@ -6,9 +6,10 @@ export const defaultState: Game = new Game();
 
 export const gameReducer = createReducer(
     defaultState,
+    // Handle the setPath action
     on(GameActions.setPath, (_state, { path }) => {
         let game = new Game();
-        game.setExeFullPath(path);
+        game.setPath(path);
         return game;
     })
 );

@@ -1,18 +1,19 @@
 export interface IGame {
-    exeFullPath: string | undefined;
+    path: string | undefined;
 }
 
+/**
+ * Store configuration about the game
+ */
 export class Game implements IGame {
-    
-    exeFullPath: string | undefined;
+    // Path to the game `.exe` file
+    path: string | undefined = undefined;
 
-    constructor() {
-        this.exeFullPath = undefined;
-    }
+    constructor() {}
 
-    getExeFullPath() { return this.exeFullPath; }
-    setExeFullPath(path: string | undefined) : Game {
-        this.exeFullPath = path;
+    getPath() { return this.path; }
+    setPath(path: string | undefined) : Game {
+        this.path = path;
         return this;
     }
 
